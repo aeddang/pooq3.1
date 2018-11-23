@@ -1,0 +1,42 @@
+/* 폰트 스타일 */
+@font-face {
+  font-family: 'NanumSquare';
+  src: url(NanumSquareR.woff2) format('woff2'),
+  url(NanumSquareR.woff) format('woff'),
+  url(NanumSquareR.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'NanumSquare Light';
+  src: url(NanumSquareL.woff2) format('woff2'),
+  url(NanumSquareL.woff) format('woff'),
+  url(NanumSquareL.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'NanumSquare ExtraBold';
+  src: url(NanumSquareEB.woff2) format('woff2'),
+  url(NanumSquareEB.woff) format('woff'),
+  url(NanumSquareEB.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'NanumSquareBold' ;
+  src: url(NanumSquareB.woff2) format('woff2'),
+  url(NanumSquareB.woff) format('woff'),
+  url(NanumSquareB.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Futura Std Heavy' ;
+  src: url(FuturaStdHeavy.woff2) format('woff2'),
+  url(FuturaStdHeavy.woff) format('woff'),
+  url(FuturaStdHeavy.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'FuturaBT Heavy' ;
+  src: url(FuturaBTHeavy.woff2) format('woff2'),
+  url(FuturaBTHeavy.woff) format('woff'),
+  url(FuturaBTHeavy.otf) format('opentype');
+}

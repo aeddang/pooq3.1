@@ -1,0 +1,66 @@
+@import "elements";
+
+@mixin font-default ($color) {
+  font-family : $font-family; font-size : $font-size; color :$color;
+}
+@mixin font-small ($color) {
+  font-family : $font-family-small; font-size : $font-size-small; color :$color;
+}
+@mixin font-big ($color) {
+  font-family : $font-family-big; font-size : $font-size-big; color :$color;
+}
+
+@mixin text-out () {
+  text-indent: -9999px;
+}
+@mixin text-shadow ($amount) {
+  text-shadow: -$amount -$amount 0 rgba(0,0,0, 0.2), $amount -$amount 0 rgba(0,0,0, 0.2), -$amount $amount 0 rgba(0,0,0, 0.2), $amount $amount 0 rgba(0,0,0, 0.2);
+}
+@mixin text-line-limit () {
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+
+@mixin screen-blur ($amount) {
+  -webkit-filter: $amount; filter: $amount;
+}
+@mixin screen-dimed () {
+  position:absolute; left:0; top: 0; width:100%; height:100%; background: $bg-transparent-70;
+}
+@mixin screen-default-image ($type) {
+   background:$type; background-size:cover; background-position: center; background-color:#000;
+}
+
+@mixin icon ($type) {
+  width:36px; height:36px;  background:$type; background-size:cover; background-position: center;
+}
+
+@mixin logo () {
+  width:84px; height:30px;  background:$image-logo; background-size:cover; background-position: center;
+}
+
+@mixin border-mask ($stroke, $color) {
+  position:absolute; top:0; left:0; width:100%; height:100%; border:$stroke; border-color:$color; box-sizing:border-box;
+}
+
+
+@mixin animate-in () {
+  @include animate(all, ease-in, $duration)
+}
+@mixin animate-out () {
+  @include animate(all, ease-out, $duration)
+}
+@mixin animate ($target, $ease, $duration) {
+  -webkit-transition:$target $ease $duration;
+  -moz-transition:$target $ease $duration;
+  -ms-transition:$target $ease $duration;
+  -o-transition:$target $ease $duration;
+  transition:$target $ease $duration;
+}
+
+@mixin position-left () {position:relative; display:block; float:left}
+@mixin position-right () {position:relative;display:block; float:right}
+@mixin position-center($marginX, $marginY) {position: absolute; left: 50%; top: 50%; margin: $marginX 0 0 $marginY}
+@mixin position-top() {position: absolute; top: 0}
+@mixin position-bottom() {position: absolute; bottom: 0}
+@mixin position-center-horizontal() {position: absolute; margin:0 auto}
+@mixin position-clear() {clear: both}

@@ -1,0 +1,147 @@
+{
+  "note": "GNB.JSON, Android용 GNB 메뉴. Api를 호출할때는 apikey,credential,device,partner,pooqzone,region,drm파라메터를 클라이언트에서 추가하여 호출한다.",
+  "type": "pooq_gnbmenu",
+  "version": "1.0",
+  "gnblist": [
+    {
+      "title": "홈",
+      "uicode": "GN1",
+      "eventlist": [
+        {
+          "type": "on-click",
+          "note": "사용자 클릭시에 호출하는 기능 (클릭통계, 사용자가 홈 화면 메뉴를 클릭 함)",
+          "url": "apis.pooq.co.kr/cloverfield/statistic/click",
+          "method": "post",
+          "bodylist": [
+            "type:display",
+            "uirank:1",
+            "uiparent:none",
+            "uicode:GN1",
+            "timestamp:$TIMESTAMP"
+          ],
+          "add_common_params": "y",
+          "add_credential": "y"
+        },
+        {
+          "type": "on-content",
+          "note": "클릭으로 인하여 하부 메뉴/콘텐츠/밴드 정보를 가져오는 기능(이 케이스에는 홈 화면)",
+          "url": "apis.pooq.co.kr/cloverfield/multisection?section=GN1",
+          "add_common_params": "y",
+          "add_credential": "y"
+        }
+      ]
+    },
+    {
+      "title": "VOD",
+      "uicode": "GN2",
+      "eventlist": [
+        {
+          "type": "on-click",
+          "note": "사용자 클릭시에 호출하는 기능 (클릭통계, 사용자가 VOD 화면 메뉴를 클릭 함)",
+          "url": "apis.pooq.co.kr/cloverfield/statistic/click",
+          "method": "post",
+          "bodylist": [
+            "type:display",
+            "uirank:2",
+            "uiparent:none",
+            "uicode:GN2",
+            "timestamp:$TIMESTAMP"
+          ],
+          "add_common_params": "y",
+          "add_credential": "y"
+        },
+        {
+          "type": "on-content",
+          "note": "클릭으로 인하여 하부 메뉴/콘텐츠/밴드 정보를 가져오는 기능(이 케이스에는 VOD 화면)",
+          "url": "apis.pooq.co.kr/cloverfield/multisection?section=GN2",
+          "add_common_params": "y",
+          "add_credential": "n"
+        }
+      ]
+    },
+    {
+      "title": "LIVE",
+      "uicode": "GN3",
+      "eventlist": [
+        {
+          "type": "on-click",
+          "note": "사용자 클릭시에 호출하는 기능 (클릭통계, 사용자가 LIVE 화면 메뉴를 클릭 함)",
+          "url": "apis.pooq.co.kr/cloverfield/statistic/click",
+          "method": "post",
+          "bodylist": [
+            "type:display",
+            "uirank:3",
+            "uiparent:none",
+            "uicode:GN3",
+            "timestamp:$TIMESTAMP"
+          ],
+          "add_common_params": "y",
+          "add_credential": "y"
+        },
+        {
+          "type": "on-content",
+          "note": "클릭으로 인하여 하부 메뉴/콘텐츠/밴드 정보를 가져오는 기능(이 케이스에는 LIVE 화면)",
+          "url": "apis.pooq.co.kr/cloverfield/multisection?section=GN3",
+          "add_common_params": "y",
+          "add_credential": "n"
+        }
+      ]
+    },
+    {
+      "title": "TV컷",
+      "uicode": "GN4",
+      "eventlist": [
+        {
+          "type": "on-click",
+          "note": "사용자 클릭시에 호출하는 기능 (클릭통계, 사용자가 TV컷 화면 메뉴를 클릭 함)",
+          "url": "apis.pooq.co.kr/cloverfield/statistic/click",
+          "method": "post",
+          "bodylist": [
+            "type:display",
+            "uirank:4",
+            "uiparent:none",
+            "uicode:GN4",
+            "timestamp:$TIMESTAMP"
+          ],
+          "add_common_params": "y",
+          "add_credential": "y"
+        },
+        {
+          "type": "on-content",
+          "note": "클릭으로 인하여 하부 메뉴/콘텐츠/밴드 정보를 가져오는 기능(이 케이스에는 TV컷 화면)",
+          "url": "apis.pooq.co.kr/cloverfield/multisection?section=GN4",
+          "add_common_params": "y",
+          "add_credential": "y"
+        }
+      ]
+    },
+    {
+      "title": "영화",
+      "uicode": "GN5",
+      "eventlist": [
+        {
+          "type": "on-click",
+          "note": "사용자 클릭시에 호출하는 기능 (클릭통계, 사용자가 영화 화면 메뉴를 클릭 함)",
+          "url": "apis.pooq.co.kr/cloverfield/statistic/click",
+          "method": "post",
+          "bodylist": [
+            "type:display",
+            "uirank:5",
+            "uiparent:none",
+            "uicode:GN5",
+            "timestamp:$TIMESTAMP"
+          ],
+          "add_common_params": "y",
+          "add_credential": "y"
+        },
+        {
+          "type": "on-content",
+          "note": "클릭으로 인하여 하부 메뉴/콘텐츠/밴드 정보를 가져오는 기능(이 케이스에는 영화 화면)",
+          "url": "apis.pooq.co.kr/cloverfield/multisection?section=GN5",
+          "add_common_params": "y",
+          "add_credential": "y"
+        }
+      ]
+    }
+  ]
+}

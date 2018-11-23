@@ -1,0 +1,54 @@
+$static-path: 'http://localhost:8080/';
+
+$font-family: 'NanumSquare', sans-serif;
+$font-family-small: 'NanumSquare', sans-serif;
+$font-family-big: 'NanumSquare', sans-serif;
+$font-size: 14px;
+$font-size-small: 12px;
+$font-size-big: 16px;
+
+$color-white: #fff;
+$color-grey: #999;
+$color-grey-bright: #eee;
+$color-grey-dark: #666;
+$color-black-bright: #333;
+$color-black: #000;
+$color-purple: #8d4fe3;
+$color-purple-bright: #d206fc;
+$color-purple-dark: #5654e1;
+
+$gradient-purple: linear-gradient(to right, #5654e1,#8d4fe3,#2ac5fe);
+$gradient-red: linear-gradient(to right, #d206fc,#e82493,#ef8242);
+
+$line-stroke: 1px solid;
+$line-stroke-bold: 2px solid;
+$line-stroke-light: 0.5px solid;
+
+$radius: 5px;
+$radius-small: 2px;
+$radius-big: 15px;
+$radius-round: 100px;
+
+$duration: 0.3s;
+$duration-short: 0.2s;
+$duration-long: 0.5s;
+
+$margin: 5px;
+$margin-small: 2px;
+$margin-big: 15px;
+$margin-ultra: 30px;
+
+$blur: blur(15px);
+$blur-weak: blur(5px);
+$blur-strong: blur(50px);
+
+$bg-transparent: url($static-path + 'static/images/transparent.png') repeat;
+$bg-transparent-10: url($static-path + 'static/images/transparent10.png') repeat;
+$bg-transparent-15: url($static-path + 'static/images/transparent15.png') repeat;
+$bg-transparent-30: url($static-path + 'static/images/transparent30.png') repeat;
+$bg-transparent-70: url($static-path + 'static/images/transparent70.png') repeat;
+
+$image-default: url($static-path + 'static/images/default_image_horizental.png') no-repeat;
+$image-logo: url($static-path + 'static/images/2x/logo.png') no-repeat;
+$icon-search: url($static-path + 'static/images/2x/ic_search.png') no-repeat;
+$icon-lnb: url($static-path + 'static/images/2x/ic_lnb.png') no-repeat;
