@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import { ApiCommand } from './ApiConfig'
 import { TypeValidation } from '../libs/utils'
+import http from './mixins/Http'
 const typeValidation = new TypeValidation()
 
 export default new Vue({
@@ -8,10 +9,9 @@ export default new Vue({
     credential: typeValidation.getStringValue(localStorage.getItem('credeltial'), 'none'),
     userData: JSON.parse(typeValidation.getStringValue(localStorage.getItem('userData'), '{}')),
     pooqzone: 'none',
-    isAutoLogin: true,
-    error: null
+    isAutoLogin: true
   },
-
+  mixins: [http],
   computed: {
     userNo: function () { return typeValidation.getStringValue(this.userData.uno) },
     profileId: function () { return typeValidation.getStringValue(this.userData.profileid) }
@@ -44,6 +44,7 @@ export default new Vue({
 
     login: function (id, pw, type = 'general', profile = '1') {
       this.clear()
+      this.loading()
       const api = this.$globalStore.state.api
       let params = {}
       params.type = type
@@ -51,31 +52,38 @@ export default new Vue({
       params.password = pw
       params.pushid = ''
       params.profile = profile
-      const path = api.path(ApiCommand.LOGIN) + api.defaultQurry
+      const path = api.path(ApiCommand.LOGIN) + api.getDefaultQurry()
       this.$http.post(path, params)
         .then((result) => {
           this.credential = encodeURIComponent(result.data.credential)
           this.getUserInfo()
+          this.completed()
         })
-        .catch((error) => { this.error = error })
+        .catch((error) => { this.error(error) })
     },
 
     logout: function () {
       const api = this.$globalStore.state.api
       let params = {}
       params.pushid = ''
-      const path = api.path(ApiCommand.LOGOUT) + api.defaultQurry
+      const path = api.path(ApiCommand.LOGOUT) + api.getDefaultQurry()
       this.$http.post(path, params)
-        .then((result) => { this.clear() })
-        .catch((error) => { this.error = error })
+        .then((result) => {
+          this.clear()
+          this.completed()
+        })
+        .catch((error) => { this.error(error) })
     },
 
     getUserInfo: function () {
       const api = this.$globalStore.state.api
-      const path = api.path(ApiCommand.GET_USER) + api.defaultQurry
+      const path = api.path(ApiCommand.GET_USER) + api.getDefaultQurry()
       this.$http.get(path)
-        .then((result) => { this.userData = result.data })
-        .catch((error) => { this.error = error })
+        .then((result) => {
+          this.userData = result.data
+          this.completed()
+        })
+        .catch((error) => { this.error(error) })
     }
   }
 })

@@ -16,6 +16,7 @@ export default {
     window.addEventListener('resize', () => {
       this.$globalStore.commit('resize')
     })
+    this.$globalStore.state.pooqZone.checkPooqZone()
   }
 }
 </script>

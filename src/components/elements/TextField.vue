@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'extField',
+  name: 'textField',
   props: ['text'],
   computed: {
     modifyText: function () { return '@#$ : ' + this.text }

@@ -12,7 +12,7 @@
 
 <script>
 import model from '../viewmodels/ModelTest'
-import { PooqZoneData } from '../models/pooqZone'
+import { PooqZoneData } from '../models/MDPooqZone'
 export default
 {
   name: 'Test',

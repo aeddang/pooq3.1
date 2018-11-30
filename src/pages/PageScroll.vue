@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import store from '../stores/Nav'
+import store from '../stores/VXNav'
 export default {
   name: 'PageScroll',
   props: ['title'],

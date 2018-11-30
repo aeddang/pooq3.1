@@ -8,6 +8,8 @@ import imageCell from './ImageCell'
 import tab from './Tab'
 import top from './Top'
 import swiperTest from './SwiperTest'
+import sectionList from './SectionList'
+import sectionSwiper from './SectionSwiper'
 /* elements */
 Vue.component('el-text-button', textButton)
 Vue.component('el-text-field', textField)
@@ -20,3 +22,5 @@ Vue.component('cp-image-cell', imageCell)
 Vue.component('cp-tab', tab)
 Vue.component('cp-top', top)
 Vue.component('cp-swiper', swiperTest)
+Vue.component('cp-section-list', sectionList)
+Vue.component('cp-section-swiper', sectionSwiper)

@@ -32,6 +32,11 @@ export class TypeValidation {
     if (this.isNullValue(datas)) return []
     return datas
   }
+
+  getProtocolValue (value, defaultProtocol = 'https://') {
+    if (value.indexOf('http') === 0) return value
+    return defaultProtocol + value
+  }
 }
 
 export class Cookies {

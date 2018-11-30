@@ -6,7 +6,7 @@ const API_BOOK_MARK= 'https://bookmark3.pooq.co.kr/bookmark'
 const API_BOOK_MARK_LOG= 'https://applog3.pooq.co.kr/bookmark-applog'
 */
 const API_CREDENTIAL_KEY = 'E5F3E0D30947AA5440556471321BB6D9'
-const DEVICE = 'pc'
+const DEVICE = 'android'
 const PARTNER = 'pooq'
 const REGION = 'kor'
 const TARGET_AGE = 'auto'
@@ -28,7 +28,7 @@ export default new Vue({
       return param
     },
     defaultQurry: function () {
-      let gurry = `?device=${DEVICE}&partner=${PARTNER}&pooqzone=${this.$globalStore.state.user.pooqzone}` +
+      let gurry = `device=${DEVICE}&partner=${PARTNER}&pooqzone=${this.$globalStore.state.user.pooqzone}` +
         `&region=${REGION}&drm=${this.$globalStore.state.environment.drmType}&targetage=${TARGET_AGE}` +
         `&apikey=${API_CREDENTIAL_KEY}&credential=${this.$globalStore.state.user.credential}`
       return gurry
@@ -37,6 +37,13 @@ export default new Vue({
   methods: {
     path: function (command) {
       return `${API_PATH}${command}`
+    },
+    getDefaultQurry: function (delimiter = '?') {
+      return delimiter + this.defaultQurry
+    },
+    sumDefaultQurry: function (path) {
+      let delimiter = path.indexOf('?') === -1 ? '?' : '&'
+      return path + delimiter + this.defaultQurry
     }
   }
 })

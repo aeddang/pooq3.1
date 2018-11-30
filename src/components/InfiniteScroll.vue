@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import pagingStore from '../stores/Paging'
+import pagingStore from '../stores/VXPaging'
 export default {
   name: 'Scroll',
   store: pagingStore,

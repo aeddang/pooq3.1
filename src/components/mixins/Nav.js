@@ -4,21 +4,23 @@ export default {
       activeCode: ''
     }
   },
-  watch: {
-    '$globalStore.state.clientSize': function (newValue) {
-      this.moveBar()
-    }
-  },
   computed: {
     activeBtn () {
       if (!this.$refs[this.activeCode]) return null
       return this.$refs[this.activeCode][0]
     }
   },
+  watch: {
+    '$globalStore.state.clientSize': function (newValue) {
+      this.moveBar()
+    },
+    activeBtn (newValue) {
+      this.moveBar()
+    }
+  },
   methods: {
     active: function (key) {
       this.activeCode = key
-      this.moveBar()
     },
     moveBar: function () {
       if (this.activeBtn == null) return
